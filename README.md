@@ -17,7 +17,7 @@ Customers can view, update, or cancel their appointments.
 
 Service Listings and Management
 The system displays a list of services (e.g., braiding, blowouts) with duration and price.
-Admin (Joyceline) can add, update, or delete services.
+Admin  can add, update, or delete services.
 Customers can search for services based on type and price.
 
 Appointment History and Transactions

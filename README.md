@@ -1,7 +1,7 @@
-HairbyJoyceline Booking System
+Hair Booking System
 
 Project Overview
-HairbyJoyceline is an online booking system for a hair business, allowing customers to book appointments, view available services, and manage their bookings. The system provides both customer-facing and admin-facing functionalities to streamline business operations.
+ This is an online booking system for a hair business, allowing customers to book appointments, view available services, and manage their bookings. The system provides both customer-facing and admin-facing functionalities to streamline business operations.
 
 Functional Requirements
 Customer Registration and Management

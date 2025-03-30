@@ -1,6 +1,4 @@
-from urllib import request
-
-from flask import Flask, jsonify
+from flask import Flask, jsonify,request
 from flask_restful import Resource, Api
 app = Flask(__name__)
 api = Api(app)
@@ -32,7 +30,7 @@ class ServiceManagement(Resource):
         #retrieve and return a list of services (dummy data here)
         services = [
             {"id":1, "service_name": "boho braids", "description": "The look that keeps on giving", "price":120.0},
-        {"id":2, "service_name": "passion twist", "description": "bouncy curls", "price":100.0},
+        {"id":2, "service_name": "passion twist", "description": "Juicy bouncy curls", "price":100.0},
         ]
 
         return jsonify(services)

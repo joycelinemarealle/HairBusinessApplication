@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb78c62f-f939-48a2-885d-e86a903dc2ec" name="Changes" comment="" />
+    <list default="true" id="cb78c62f-f939-48a2-885d-e86a903dc2ec" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/test_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/test_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/main.py" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,6 +105,9 @@
       <workItem from="1743341333856" duration="427000" />
       <workItem from="1743341782886" duration="8000" />
       <workItem from="1743345670727" duration="740000" />
+      <workItem from="1743689612920" duration="73000" />
+      <workItem from="1743689724033" duration="12000" />
+      <workItem from="1743689793848" duration="9000" />
     </task>
     <task id="LOCAL-00001" summary="Phase 2 setting back end.&#10; a) Set up development enviroment &#10; - set up environment &#10; - packages&#10; - dependencies&#10; &#10;  b) Postgresql Database integration&#10;  - connection issues to be fixed">
       <option name="closed" value="true" />

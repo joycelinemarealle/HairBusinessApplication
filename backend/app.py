@@ -1,4 +1,4 @@
-from flask import Flask, jsonify,request
+from flask import Flask, jsonify,request, abort
 from flask_restful import Resource, Api
 app = Flask(__name__)
 api = Api(app)
@@ -8,6 +8,9 @@ class CustomerRegistration(Resource):
     def  post(self):
         data = request.get_json() #get data from request body
         #here validate and save customer details to my database
+        if not data or not data.get("name") or not data.get("email") or not data.get("phone"):
+            abort(400,description="Missing required customer data")
+
         #For now return received data
         return jsonify({
                 "message":"Customer registered successfully",
@@ -19,6 +22,8 @@ class AppointmentBooking(Resource):
     def post(self):
         data = request.get_json()
         #validate data and book input (eg check if customers exists
+        if not data  or not data.get("customer_id") or not data.get("appointment_id") or not data.get("appointment_date"):
+            abort(400, description = "Appointment booking failed")
         return jsonify({
             "message":"Appointment booked successfully",
             "data":data
@@ -44,7 +49,7 @@ class ServiceManagement(Resource):
 
     def put(self):
         data = request.get_json()
-        # Logic to update an existing service.
+        #TODO Logic to update an existing service.
         return jsonify({
             "message": "Service updated successfully",
             "data": data
@@ -52,7 +57,7 @@ class ServiceManagement(Resource):
 
     def delete(self):
         data = request.get_json()
-        # Logic to delete a service.
+        #TODO Logic to delete a service.
         return jsonify({
             "message": "Service deleted successfully",
             "data": data

@@ -1,4 +1,4 @@
-import React from 'react', {useState};
+import React, {useState} from 'react' ;
 
 function Register (){
     const [formData, setFormData] = useState({
@@ -44,12 +44,12 @@ function Register (){
                 </div>
                 <div>
                     <label>Email: </label>
-                    <input type="email" name="email" value={formatData.email} onChange={handleChange} required />
+                    <input type="email" name="email" value={formData.email} onChange={handleChange} required />
                 </div>
 
                 <div>
                     <label>Phone: </label>
-                    <input type="text"  name="phone" value={formatData.phone} onChange={handleChange} required/>
+                    <input type="text"  name="phone" value={formData.phone} onChange={handleChange} required/>
                 </div>
                     <button type="submit">Register</button>
             </form>

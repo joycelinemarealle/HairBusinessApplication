@@ -1,6 +1,12 @@
 import React from 'react';
 
 function Home(){
-    return <h1>Welcome to Booboo Kitty Hair Transformation page </h1>;
+    return (
+        <div>
+            <h1>Welcome to Booboo Kitty's Hair Transformation Application! </h1>
+            <p> This is the home page. </p>
+        </div>
+    );
 }
+
 export default Home;

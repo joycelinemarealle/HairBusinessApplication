@@ -16,21 +16,19 @@ function Register (){
     const handleSubmit = async (e) => {
         e.preventDefault();
         try{
-            const response = await fetch("http://127.0.0.1:5000/",{
+            const response = await fetch("http://127.0.0.1:5000/customers",{
                 method:'POST',
                 headers:{'Content-Type': 'application/json'},
                 body:JSON.stringify(formData)
             });
             const data = await response.json();
-            if (response.status === 201){
-                setMessage('Registration successful');
-            } else{
-                setMessage('Registration failed:' + data.message);
+            if (!response.ok){
+                const error = await response.json()
+                throw new Error(error.message || response.statusText)
             }
-
+            setMessage('Registration successful' );
         } catch(error){
-            console.error('Error',error);
-            setMessage('An error occured.');
+            setMessage('Registration failed:.' + error.message);
         }
     };
 

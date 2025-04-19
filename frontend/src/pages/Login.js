@@ -1,6 +1,7 @@
 import React , {useState} from 'react';
 
 function Login() {
+  // const [credentials, setCredentials] = useState({email: '', password: ''})
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
    const [message, setMessage] = useState('');

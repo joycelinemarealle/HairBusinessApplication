@@ -1,20 +1,45 @@
-import React , {useState} from 'react';
+import React , {useState, useEffect} from 'react';
 
-function BookAppointment(){
-    const[formData,setFormData] = useState({
+function BookAppointment() {
+    // 1 Form state: to hold user input customer , service, date and status
+    const [formData, setFormData] = useState({
         customer_id: '',
         service_id: '',
         appointment_date: '',
         status: 'pending'
     });
-    const [message,setMessage] = useState('');
 
+    //2 Services state: list of available services, fetched on mount
+    const [services, setServices] = useState([])
+
+    // 3 Message state to displays success or error feedback
+    const [message, setMessage] = useState('');
+
+
+    //4 useEffect to load services from the backend when component mounts
+    useEffect(() => {
+        fetch('http://localhost:5000/services')
+            .then(response => {
+                if (!response.ok) throw new Error(`Error ${response.status}`);
+                return response.json();
+            })
+            .then(json => {
+                //backend returns { services: [...] }
+                setServices(json.services);
+            })
+            .catch(err => {
+                console.error('Error loading services', err);
+            });
+}, []); // empty deps => run once
+
+//5 handleChange: update formData when any input or select changes
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value});
     };
 
+    // 6 handleSubmit: POST formData to /appointments
     const handleSubmit = async (e) => {
-        e.preventDefault();
+        e.preventDefault(); //prevent page reload
         try {
             const response = await fetch('http://localhost:5000/appointments', {
                 method: 'POST',

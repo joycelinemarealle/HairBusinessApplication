@@ -5,6 +5,7 @@ function Home(){
         <div>
             <h1>Welcome to Booboo Kitty's Hair Transformation Application! </h1>
             <p> This is the home page. </p>
+            <p> Hi </p>
         </div>
     );
 }

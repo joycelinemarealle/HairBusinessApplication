@@ -16,10 +16,10 @@ function Login() {
       e.preventDefault(); // prevent page reload
 
       try {
-         // 4a Send POST request to the backend log in endpoint
-         const response = await fetch ('', {
+         // 4a Send POST request to the backend login endpoint
+         const response = await fetch ('https://localhost:5000/login', {
             method: 'POST',
-            headers: {'Content-Type': 'applicstion.json'},
+            headers: {'Content-Type': 'application.json'},
             body: JSON.stringify(credentials) //send {email, password}
          });
 
@@ -39,7 +39,6 @@ function Login() {
 
    };
 
-
    return (
        <div>
           <h2>Login</h2>
@@ -48,7 +47,7 @@ function Login() {
                 <label>Email:</label>
                 <input name="email"
                        type="email"
-                       value={email}
+                       value={credentials.email}
                        onChange={handleChange} required/>
              </div>
              <div>
@@ -56,7 +55,7 @@ function Login() {
                 <input
                     name="password"
                     type="password"
-                    value={password}
+                    value={credentials.password}
                     onChange={handleChange} required/>
              </div>
              <button type="submit">Login</button>

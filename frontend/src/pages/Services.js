@@ -19,10 +19,10 @@ function Services(){
             //2c Extract array from '{services: [...] and save to state}'
             setServices(json.services);
         })
-        .catch(() => {
-            //2d If any step fails, set an error message
-            setError('Failed to load services.');
-        })
+        .catch(err  => {
+            console.error('Fetch error:', err);
+            setError('Failed to load services: ${err.message}');
+        });
 
     },[]); //empty dependency array means this runs only once
 

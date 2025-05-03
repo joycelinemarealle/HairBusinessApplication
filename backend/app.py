@@ -1,6 +1,8 @@
 from flask import Flask, jsonify,request, abort
 from flask_restful import Resource, Api
+from flask_cors import CORS
 app = Flask(__name__)
+CORS(app) #this opens cors to allow my react front end at port 3000
 api = Api(app)
 
 #customer registration API
@@ -34,8 +36,8 @@ class ServiceManagement(Resource):
     def get(self):
         #retrieve and return a list of services (dummy data here)
         services = [
-            {"id":1, "service_name": "boho braids", "description": "The look that keeps on giving", "price":120.0},
-        {"id":2, "service_name": "passion twist", "description": "Juicy bouncy curls", "price":100.0},
+            {"id":1, "service_name": "Boho braids", "description": "The look that keeps on giving", "price":120.0},
+        {"id":2, "service_name": "Passion twist", "description": "Juicy bouncy curls", "price":100.0},
         ]
 #Wrap list in an object since react code is expecting json.services
         return jsonify({"services":services})
@@ -69,7 +71,7 @@ api.add_resource(AppointmentBooking, '/appointments')
 api.add_resource(ServiceManagement, '/services')
 
 if __name__== '__main__':
-    app.run(debug=True, port=5000)
+    app.run(debug=True, port=5001)
 
 
 

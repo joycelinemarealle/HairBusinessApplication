@@ -17,7 +17,7 @@ function Login() {
 
       try {
          // 4a Send POST request to the backend login endpoint
-         const response = await fetch ('https://localhost:5000/login', {
+         const response = await fetch ('https://localhost:5001/login', {
             method: 'POST',
             headers: {'Content-Type': 'application.json'},
             body: JSON.stringify(credentials) //send {email, password}

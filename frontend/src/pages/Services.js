@@ -8,7 +8,7 @@ function Services(){
     //2 useEffect to fetch services once when the component mount
     useEffect(() => {
         //Call our backend API
-        fetch ('http://localhost:5000/services')
+        fetch ('http://localhost:5001/services')
                 //2a check for HTTP errors (non-2xx  eg 200,201 status codes)
             .then(response => {
                 if (!response.ok) throw new Error (`HTTP ${response.status}`);

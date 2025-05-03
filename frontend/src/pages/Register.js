@@ -19,7 +19,7 @@ function Register (){
         e.preventDefault(); // Prevenet page reload
         try{
             // 4a Send POST request to backend API with form data
-            const response = await fetch("http://127.0.0.1:5000/customers",{
+            const response = await fetch("http://127.0.0.1:5001/customers",{
                 method:'POST',
                 headers:{'Content-Type': 'application/json'},
                 body:JSON.stringify(formData) // Convert formData object to JSON

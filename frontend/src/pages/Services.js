@@ -11,7 +11,7 @@ function Services(){
         fetch ('http://localhost:5000/services')
                 //2a check for HTTP errors (non-2xx  eg 200,201 status codes)
             .then(response => {
-                if (!response.ok) throw new Error ('Error ${response.status}' );
+                if (!response.ok) throw new Error (`HTTP ${response.status}`);
                //2b Parse JSON body on success
                 return response.json()
             })
@@ -21,7 +21,8 @@ function Services(){
         })
         .catch(err  => {
             console.error('Fetch error:', err);
-            setError('Failed to load services: ${err.message}');
+            //logging for debugging
+            setError(`Failed to load services: ${err.message}`);
         });
 
     },[]); //empty dependency array means this runs only once

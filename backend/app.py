@@ -37,8 +37,8 @@ class ServiceManagement(Resource):
             {"id":1, "service_name": "boho braids", "description": "The look that keeps on giving", "price":120.0},
         {"id":2, "service_name": "passion twist", "description": "Juicy bouncy curls", "price":100.0},
         ]
-
-        return jsonify(services)
+#Wrap list in an object since react code is expecting json.services
+        return jsonify({"services":services})
 
     def post(self):
         #TODO logic to add new service

@@ -24,7 +24,9 @@ class AppointmentBooking(Resource):
     def post(self):
         data = request.get_json()
         #validate data and book input (eg check if customers exists
-        if not data  or not data.get("customer_id") or not data.get("appointment_id") or not data.get("appointment_date"):
+        if (not data  or not data.get("customer_id")
+                or not data.get("service_id")
+                or not data.get("appointment_date")):
             abort(400, description = "Appointment booking failed")
         return jsonify({
             "message":"Appointment booked successfully",

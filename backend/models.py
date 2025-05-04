@@ -25,7 +25,7 @@ class Service(Base):
     description = Column(String)
     price = Column(Numeric)
 
-class Appoointment(Base):
+class Appointment(Base):
     __tablename__ = 'appointments'
     id = Column(Integer, primary_key =True)
     customer_id = Column(Integer, ForeignKey('customers.id'), nullable=False) #Link to customer

@@ -71,8 +71,8 @@ function BookAppointment() {
                     <input type="number" name="service_id" value={formData.service_id} onChange={handleChange} required />
                 </div>
                 <div>
-                    <lable> Appointment Date:</lable>
-                    <input type="datetime-local" name="appointment_date" value="formData.appointment_date" onChange={handleChange} required />
+                    <label> Appointment Date:</label>
+                    <input type="datetime-local" name="appointment_date" value={formData.appointment_date} onChange={handleChange} required />
                 </div>
                 <button type="submit">Book Appointment</button>
           </form>
